@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: libro-read-one
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: libro-read-one
+  template:
+    metadata:
+      labels:
+        app: libro-read-one
+    spec:
+      containers:
+      - name: libro-read-one
+        image: libro-read-one:latest
+        ports:
+        - containerPort: 8083
+        env:
+        - name: MONGODB_URI
+          value: "mongodb://root:example@mongodb-service:27017" 

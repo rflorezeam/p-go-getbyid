@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: libro-read-one-service
+spec:
+  selector:
+    app: libro-read-one
+  ports:
+    - protocol: TCP
+      port: 8083
+      targetPort: 8083
+      nodePort: 30083
+  type: NodePort 

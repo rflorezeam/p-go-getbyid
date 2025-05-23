@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  libro-read-one:
+    build: .
+    container_name: libro-read-one
+    ports:
+      - "8083:8083"
+    networks:
+      - libro-network
+networks:
+  libro-network:
+    external: true 
